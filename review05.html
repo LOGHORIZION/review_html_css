@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 定位（position）
+    static
+    relative
+    absolute
+      2.开启绝对定位后，元素会从文档流中脱离
+      绝对定位会使元素提升一个层级
+      .绝对定位元素是相对于其包含块进行定位的
+
+
+    fixed
+       唯一不同的是固定定位永远参照于浏览器的视口进行定位
+    sticky
+          元素的position属性设置为sticky时则开启了元素的粘滞定位
+       - 粘滞定位和相对定位的特点基本一致，
+        不同的是粘滞定位可以在元素到达某个位置时将其固定
+对于开启了定位元素，可以通过z-index属性来指定元素的层级
+                    z-index需要一个整数作为参数，值越大元素的层级越高
+                        元素的层级越高越优先显示
+
+                    如果元素的层级一样，则优先显示靠下的元素
+
+                    祖先的元素的层级再高也不会盖住后代元素
+    */
+    body{
+            font-size: 60px;
+            height: 2000px;
+        }
+    p{
+      font-size: 20px;
+    }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            /* position: absolute;
+             */
+            top: 300px;
+            position: fixed;
+            /* right: 200px;
+             */
+            /* left: 200px;
+            top: -50px; */
+        }
+        .box3{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            position: sticky;
+            top: 20px;
+        }
+  </style>
+</head>
+<body>
+  <div class="box1">1</div>
+  <div class="box2">2 fixed <p>相对于视口的绝对定位 </p> </div>
+  <!-- <div class="box2">4 fixed <p>相对于视口的绝对定位 </p> </div> -->
+  <div class="box3">3</div>
+</body>
+</html>
